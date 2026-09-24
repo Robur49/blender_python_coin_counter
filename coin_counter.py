@@ -2,7 +2,7 @@
 import bpy
 from bpy.types import Panel, Operator
  
-class ADDONNAME_PT_main_panel(Panel):
+class COINCOUNTER_PT_main_panel(Panel):
     bl_label = "Main Panel"
     bl_idname = "COINCOUNTER_PT_main_panel"
     bl_space_type = 'VIEW_3D'
@@ -13,25 +13,25 @@ class ADDONNAME_PT_main_panel(Panel):
         layout = self.layout
  
         layout.operator("coincounter.myop_operator")
- 
- 
-class ADDONNAME_OT_my_op(Operator):
+
+class COINCOUNTER_OT_my_op(Operator):
     bl_label = "Count Coins"
     bl_idname = "coincounter.myop_operator"
     
-    coin_num : bpy.props.IntProperty(default= 10)
-    
     def execute(self, context):    
         
+        coin_num = 0
+
+        for obj in context.scene.objects:
+            if "coin" in obj.name.lower():
+                coin_num = coin_num + 1
         
-        self.report({'INFO'}, "Number of coins: %i" %
-        (self.coin_num)
-        )
+        self.report({'INFO'}, f"Number of coins: {coin_num}")
         
         return {'FINISHED'}
  
  
-classes = [ADDONNAME_PT_main_panel, ADDONNAME_OT_my_op]
+classes = [COINCOUNTER_PT_main_panel, COINCOUNTER_OT_my_op]
 
 def register():
     for cls in classes:
