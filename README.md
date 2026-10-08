@@ -2,8 +2,7 @@
 
 A custom Python tool developed within Blender to automate asset counting for an original 3D platformer environment I modeled from scratch. Created as a technical art portfolio piece, this project demonstrates custom tool creation using Blender's Python API (`bpy`) to streamline level design workflows.
 
-![Tool Showcase](link-to-your-gif-or-screenshot-here.gif)
-> [Note for myself: Record a quick 5-second GIF or take a screenshot of yourself clicking the button in Blender and the count showing up. Upload it to your repo and link it above.]
+<img width="1359" height="852" alt="coin_scrsht" src="https://github.com/user-attachments/assets/4ac81016-3044-43c4-bf20-9083e28b4ad5" />
 
 ## 🛠️ Features
 
